@@ -1,0 +1,108 @@
+:host {
+  display: block;
+}
+
+/* Color palette (provided) */
+:root {
+  --brand-50:  #f1f8fe;
+  --brand-100: #e1f0fd;
+  --brand-200: #bde0fa;
+  --brand-300: #61baf5;
+  --brand-400: #3fadf1;
+  --brand-500: #1693e1;
+  --brand-600: #0a74bf;
+  --brand-700: #095c9b;
+  --brand-800: #0c4f80;
+  --brand-900: #10426a;
+  --brand-950: #0b2a46;
+
+  --muted-foreground: #1f2937;
+}
+
+/* Layout helpers */
+.ts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .ts-grid.md-2 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .ts-grid.lg-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Card */
+.ts-card {
+  background: linear-gradient(180deg, var(--brand-50) 0%, white 100%);
+  border: 1px solid rgba(16,66,106,0.08);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(11,42,70,0.06);
+  color: var(--muted-foreground);
+}
+.ts-card .title {
+  font-weight: 600;
+  color: var(--brand-700);
+  margin-bottom: 0.5rem;
+}
+.ts-card .meta {
+  font-size: 0.875rem;
+  color: var(--brand-500);
+}
+
+/* Button variants */
+.ts-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.ts-btn-primary {
+  background: linear-gradient(180deg, var(--brand-400), var(--brand-500));
+  color: white;
+  box-shadow: 0 6px 12px rgba(22,147,225,0.18);
+}
+.ts-btn-outline {
+  background: transparent;
+  color: var(--brand-600);
+  border: 1px solid var(--brand-200);
+}
+
+/* Badge */
+.ts-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  background: var(--brand-200);
+  color: var(--brand-900);
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+/* Utilities */
+.ts-center { text-align: center; }
+.ts-p-4 { padding: 1rem; }
+.ts-mt-3 { margin-top: 0.75rem; }
+.ts-rounded { border-radius: 0.5rem; }
+
+/* Hero / Heading */
+.ts-hero {
+  padding: 2rem 0;
+  background: linear-gradient(90deg, var(--brand-50), white);
+  border-bottom: 1px solid rgba(16,66,106,0.04);
+}
+.ts-hero h1 {
+  color: var(--brand-900);
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Small responsive tweaks for product card hosts */
+product-card { display: block; }
+

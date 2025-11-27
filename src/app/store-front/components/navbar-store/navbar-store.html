@@ -1,0 +1,14 @@
+
+<div class="navbar bg-base-100 shadow-sm">
+
+<nav class="ts-navbar ts-p-4 ts-rounded" style="background: var(--brand-100); box-shadow: 0 2px 8px rgba(11,42,70,0.08);">
+  <div class="ts-navbar-start">
+    <a class="ts-btn ts-btn-outline ts-rounded ts-mr-2 ts-navbar-logo" routerLink="/">Teslo <strong>Shop</strong></a>
+    <a [routerLink]="['/gender','men']" class="ts-btn ts-btn-outline" routerLinkActive="active">Men</a>
+    <a [routerLink]="['/gender','women']" class="ts-btn ts-btn-outline" routerLinkActive="active">Women</a>
+    <a [routerLink]="['/gender','kids']" class="ts-btn ts-btn-outline" routerLinkActive="active">Kids</a>
+  </div>
+  <div class="ts-navbar-end">
+    <a class="ts-btn ts-btn-primary ts-rounded">Button</a>
+  </div>
+</nav>
