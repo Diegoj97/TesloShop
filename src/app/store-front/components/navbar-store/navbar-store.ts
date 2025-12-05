@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Auth } from '../../../auth/services/auth';
 
 @Component({
   selector: 'app-navbar-store',
@@ -8,4 +9,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrls: ['./navbar-store.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavbarStore { }
+export class NavbarStore {
+
+  auhtService = inject(Auth);
+ }

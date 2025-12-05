@@ -1,0 +1,25 @@
+.auth-layout-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f5f6fa;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.auth-layout-container h1 {
+  margin-bottom: 24px;
+  font-size: 2rem;
+  color: #222;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.auth-layout-container router-outlet {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+}

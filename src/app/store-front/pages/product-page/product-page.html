@@ -1,1 +1,22 @@
-<h1> Product Page </h1>
+<h1>Product Page</h1>
+
+<ng-container *ngIf="productResponse$ | async as product; else loading">
+	<div>
+		<h2>{{ product.title }}</h2>
+		<p><strong>Precio:</strong> {{ product.price }}</p>
+		<p><strong>Descripción:</strong> {{ product.description }}</p>
+		<p><strong>Stock:</strong> {{ product.stock }}</p>
+		<p><strong>Género:</strong> {{ product.gender }}</p>
+		<p><strong>Tallas:</strong> {{ product.sizes.join(', ') }}</p>
+		<p><strong>Tags:</strong> {{ product.tags.join(', ') }}</p>
+		<div>
+			<strong>Imágenes:</strong>
+			<div *ngFor="let img of product.images">
+				<img [src]="img" alt="{{ product.title }}" style="max-width: 200px; margin: 5px;" />
+			</div>
+		</div>
+	</div>
+</ng-container>
+<ng-template #loading>
+	<p>Cargando producto...</p>
+</ng-template>

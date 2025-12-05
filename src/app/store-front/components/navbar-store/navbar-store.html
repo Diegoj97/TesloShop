@@ -9,6 +9,13 @@
     <a [routerLink]="['/gender','kids']" class="ts-btn ts-btn-outline" routerLinkActive="active">Kids</a>
   </div>
   <div class="ts-navbar-end">
-    <a class="ts-btn ts-btn-primary ts-rounded">Button</a>
+    @if (auhtService.authStatus() === 'authenticated') {
+          <a class="ts-btn ts-btn-primary ts-rounded">{{ auhtService.user()?.fullName }}</a>
+          <button class="ts-btn ts-btn-outline ts-rounded" (click)="auhtService.logOut()">cerrar sesion</button>
+    } @else if (auhtService.authStatus() === 'not-authenticated') {
+          <a class="ts-btn ts-btn-primary ts-rounded" routerLink="/auth/login">Login</a>  
+    } @else {
+      <a class="ts-btn ts-btn-primary ts-rounded">Cargando...</a>
+    }
   </div>
 </nav>

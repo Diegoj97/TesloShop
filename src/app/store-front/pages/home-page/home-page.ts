@@ -15,7 +15,7 @@ export class HomePage {
 
   
 productService = inject(ProductsService);
-productsResponse$ = this.productService.getProducts();
+productsResponse$ = this.productService.getProducts({});
 products$ = this.productsResponse$.pipe(map(res => res.products))
 
 

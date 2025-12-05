@@ -1,1 +1,11 @@
-<h1> Gender Page </h1>
+<section class="ts-hero ts-center" style="padding-top: 2rem; width: 100%;">
+	<h1>Productos por género: {{ gender() }}</h1>
+</section>
+
+<div class="ts-grid playoud-2 lg-4 ts-p-4">
+	<product-card *ngFor="let p of products()" [product]="p"></product-card>
+</div>
+
+<ng-container *ngIf="!products()">
+	<p>Cargando productos...</p>
+</ng-container>
