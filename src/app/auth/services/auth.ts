@@ -59,11 +59,8 @@ login(email: string, password: string): Observable<boolean> {
       return of(false);
     }
 
-    return this.http.get<AuthResponse>(`${baseUrl}/auth/check-status`, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    }).pipe(
+    return this.http.get<AuthResponse>(`${baseUrl}/auth/check-status`)
+    .pipe(
       tap((response) => {
         this.handleAuthResponse(response);
       }),
